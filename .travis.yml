@@ -8,8 +8,10 @@ php:
 branches:
   only:
     - master
+    - travis
 
 before_script:
+  - sh .travis.sh
   - wget -nc http://getcomposer.org/composer.phar
   - php composer.phar install --install-suggests --prefer-source
 
