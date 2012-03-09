@@ -43,4 +43,4 @@ Leach is licensed under the MIT license and is copyright &copy; 2012 Pierre Minn
 [11]: https://github.com/winks/m2php
 [12]: https://github.com/phuedx/tnetstring
 [13]: https://github.com/phuedx/seraph
-[14]: https://raw.github.com/pminnieur/Leach/develop/LICENSE
+[14]: https://raw.github.com/pminnieur/Leach/master/LICENSE
