@@ -195,7 +195,6 @@ class Transport
      * Sends a response for a request.
      *
      * @todo streamed responses
-     * @todo cookie headers
      *
      * @param Request $request A Request instance
      * @param Response $response A Response instance
