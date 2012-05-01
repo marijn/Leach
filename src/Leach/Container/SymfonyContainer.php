@@ -53,23 +53,17 @@ class SymfonyContainer extends Container
         $this->kernel = $kernel;
 
         // boot KernelInterface instances
-        if ($this->getOptions()->get('kernel_boot', true) &&
-            $this->kernel instanceof KernelInterface
-        ) {
+        if ($this->getOptions()->get('kernel_boot', true) && $this->kernel instanceof KernelInterface) {
             $this->setUp(array(__CLASS__, 'boot')/* , 256 */);
         }
 
         // terminate TerminableInterface instances
-        if ($this->getOptions()->get('kernel_terminate', true) &&
-            $this->kernel instanceof TerminableInterface
-        ) {
+        if ($this->getOptions()->get('kernel_terminate', true) && $this->kernel instanceof TerminableInterface) {
             $this->tearDown(array(__CLASS__, 'terminate')/* , 512 */);
         }
 
         // shutdown KernelInterface instances
-        if ($this->getOptions()->get('kernel_shutdown', true) &&
-            $this->kernel instanceof KernelInterface
-        ) {
+        if ($this->getOptions()->get('kernel_shutdown', true) && $this->kernel instanceof KernelInterface) {
             $this->tearDown(array(__CLASS__, 'shutdown')/* , 1024 */);
         }
     }

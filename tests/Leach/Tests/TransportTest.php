@@ -196,10 +196,9 @@ class TransportTest extends TestCase
         $date = $date->format('D, d M Y H:i:s').' GMT';
 
         return "test 1:1, HTTP/1.0 200 OK\r\n" .
-               "Cache-Control:  no-cache\r\n" .
-               "Content-Length: 0\r\n" .
-               "Content-Type:   text/html; charset=UTF-8\r\n" .
-               "Date:           $date\r\n" .
+               "Cache-Control: no-cache\r\n" .
+               "Content-Type:  text/html; charset=UTF-8\r\n" .
+               "Date:          $date\r\n" .
                "\r\n\r\n";
     }
 

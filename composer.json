@@ -8,25 +8,27 @@
     "authors": [
         {
             "name": "Pierre Minnieur",
-            "email": "pm@pierre-minnieur.de",
-            "homepage": "http://pierre-minnieur.de/"
+            "email": "pm@pierre-minnieur.de"
         }
     ],
 
     "require": {
         "php": ">=5.3.2",
-        "phuedx/tnetstring": "dev-master",
-        "symfony/console": "dev-master",
-        "symfony/event-dispatcher": "dev-master",
-        "symfony/http-foundation": "dev-master",
-        "symfony/http-kernel": "dev-master"
+        "phuedx/tnetstring": "*",
+        "symfony/console": ">=2.0,<2.2",
+        "symfony/event-dispatcher": ">=2.0,<2.2",
+        "symfony/http-foundation": ">=2.0,<2.2",
+        "symfony/http-kernel": ">=2.0,<2.2"
+    },
+
+    "require-dev": {
+        "silex/silex": "*",
+        "symfony/config": ">=2.0,<2.2"
     },
 
     "suggest": {
-        "silex/silex": "dev-master",
-        "symfony/config": "dev-master",
-        "symfony/dependency-injection": "dev-master",
-        "symfony/finder": "dev-master"
+        "silex/silex": "Silex",
+        "symfony/symfony": "Symfony2"
     },
 
     "autoload": {

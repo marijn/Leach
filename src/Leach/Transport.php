@@ -215,35 +215,14 @@ class Transport
         $response->prepare($request);
 
         $uuid = $request->headers->get('X-Leach-Id');
-
         $listeners = $request->headers->get('X-Leach-Listener', null, false);
-        $listeners = $this->encode(implode(' ', $listeners));
 
-        $statusCode = $response->getStatusCode();
-        $reasonPhrase = Response::$statusTexts[$statusCode];
-
-        $httpVersion = $response->getProtocolVersion();
-
-        ob_start();
-        $response->sendContent();
-        $content = ob_get_contents();
-        ob_clean();
-
-        if (!$response->headers->has('Content-Length')) {
-            $response->headers->set('Content-Length', strlen($content));
-        }
-
-        $message = sprintf("%s %s HTTP/%s %d %s\r\n%s\r\n%s\r\n",
+        $this->send->send(sprintf(
+            "%s %s %s\r\n",
             $uuid,
-            $listeners,
-            $httpVersion,
-            $statusCode,
-            $reasonPhrase,
-            $response->headers,
-            $content
-        );
-
-        $this->send->send($message);
+            $this->encode(implode(' ', $listeners)),
+            $response
+        ));
     }
 
     /**
